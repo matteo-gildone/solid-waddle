@@ -6,12 +6,18 @@ export function setThemeMessage(theme) {
   document.getElementById('palette').value = `${theme['--column_bg']},#121016,${theme['--active_item']},${theme['--active_item_text']},${theme['--hover_item']},${theme['--text_color']},${theme['--active_presence']},${theme['--mention_badge']},${theme['--top_nav_bg']},${theme['--top_nav_text']}`;
 }
 
-export function setRatio(ratio) {
-  document.getElementById('ratio').textContent = `${ratio}:1`;
+export async function copyToClipboard(e) {
+  e.preventDefault();
+
+  const text = document.getElementById('palette').value;
+  if ('clipboard' in navigator) {
+    return await navigator.clipboard.writeText(text);
+  } else {
+    return document.execCommand('copy', true, text);
+  }
 }
 
 export function generateReportHTML(title, ratio) {
-  console.log(title, ratio);
   return `
         <div class="c-wcag-result">
           <h2 class="c-wcag-result__heading">${title} <div class="c-wcag-result__ratio"><div>Contrast Ratio</div><div>${ratio}:1</div></div></h2>

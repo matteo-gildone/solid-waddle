@@ -1,6 +1,6 @@
 import './style.css'
 import {contrast, generateRandomHex} from './utils/colours'
-import {setThemeMessage, setDocumentElementProperty, setRatio, generateReportHTML} from './utils/dom';
+import {setThemeMessage, setDocumentElementProperty, generateReportHTML, copyToClipboard} from './utils/dom';
 
 const reports = [
   {
@@ -64,8 +64,8 @@ function generateRepors (reports) {
 
 const theme = generateTheme();
 generateRepors(reports)(theme);
-
 setThemeMessage(theme);
+document.getElementById('copy-palette').addEventListener('click', copyToClipboard);
 
 
 
