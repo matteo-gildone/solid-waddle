@@ -19,6 +19,11 @@ const reports = [
     backgroundColour: '--active_item'
   },
   {
+    title: 'Active item, Column Background',
+    foregroundColour: '--active_item',
+    backgroundColour: '--column_bg'
+  },
+  {
     title: 'Hover item',
     foregroundColour: '--text_color',
     backgroundColour: '--hover_item'
