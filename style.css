@@ -1,0 +1,325 @@
+:root {
+  --column_bg: #19171d;
+  --active_item: #1164A3;
+  --active_item_text: #fff;
+  --hover_item: #27242C;
+  --text_color: #D1D2D3;
+  --active_presence: #2BAC76;
+  --mention_badge: #BFBFC1;
+  --top_nav_bg: #121016;
+  --top_nav_text: #D1D2D3;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Lato', sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.c-slack {
+  display: grid;
+  grid-template-columns: 339px calc(100% - 339px);
+  grid-template-rows: 39px calc(100% - 39px);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c-slack__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: 1 / 1 / 2 / 3;
+  background-color: var(--top_nav_bg);
+  color: var(--text_color);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.c-slack__sidebar {
+  grid-area: 2 / 1 / 3 / 2;
+  min-width: 339px;
+  background-color: var(--column_bg);
+  color: var(--text_color);
+  padding: 20px 10px;
+}
+
+.c-slack__content {
+  grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px;
+}
+
+.c-slack__content > div:first-child {
+  overflow-y: scroll;
+}
+
+.c-slack__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--top_nav_text);
+  color: var(--top_nav_text);
+  font-size: .875rem;
+  height: 65%;
+}
+
+.c-slack__users {
+  list-style: none;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-slack__users-item {
+  display: flex;
+  align-items: center;
+  color: var(--text_color);
+  padding: 2px 8px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.c-slack__users-item:hover {
+  background-color: var(--hover_item);
+}
+
+.c-slack__users-item--active {
+  background-color: var(--active_item);
+  color: var(--active_item_text);
+}
+
+.c-slack__users-item-name {
+  display: flex;
+  width: 100%;
+}
+
+.c-slack__search svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c-slack__avatar {
+  position: relative;
+  background-color: white;
+  border-radius: 4px;
+  flex-grow: 0;
+}
+
+.c-slack__avatar:after {
+  position: absolute;
+  content: "";
+  border: 1px solid var(--text_color);
+  border-radius: 50%;
+  bottom: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--column_bg);
+}
+
+.c-slack__avatar--active:after {
+  border: 1px solid var(--active_presence);
+  background-color: var(--active_presence);
+}
+
+.c-slack__avatar-image {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.c-slack__avatar {
+  margin-inline-end: .5rem;
+}
+
+.c-slack__message {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.c-slack__message input {
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+.c-wcag-result {
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  padding-bottom: 14px;
+  margin-bottom: 34px;
+}
+
+.c-wcag-result:last-child {
+  border-bottom: none;
+}
+
+.c-wcag-result__container {
+  display: flex;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+
+.c-wcag-result__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.c-wcag-result__item {
+  flex: 1;
+  text-align: center;
+  background: #000;
+  color: white;
+  padding: .5rem 0;
+  border-radius: 4px;
+  transition: background 0.5s;
+  position: relative;
+}
+
+.c-wcag-result__item div:first-child {
+  font-size: .875rem;
+}
+
+.c-wcag-result__item div:last-child {
+  font-weight: 700;
+}
+
+.c-wcag-result__item--success {
+  background-color: #081;
+}
+
+.c-wcag-result__item--success:after {
+  content: "✓ Pass";
+  display: block;
+  position: absolute;
+  color: #000;
+  text-align:center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.c-wcag-result__item--fail {
+  background-color: #d32;
+}
+
+.c-wcag-result__item--fail:after {
+  content: "✕ Fail";
+  display: block;
+  position: absolute;
+  color: #000;
+  text-align:center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.c-slack__mention-badge {
+  background-color: var(--mention_badge);
+  color: var(--column_bg);
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: .875rem;
+  line-height: 1;
+}
+
+.c-wcag-result__ratio {
+  padding: 4px 10px;
+  border-radius: 15px;
+  border: 1px solid rgba(0,0,0,0.3);
+  font-size: .875rem;
+  text-align: center;
+}
+
+.c-wcag-result__ratio div:last-child {
+  font-size: 1rem;
+  font-weight: 700;
+}
