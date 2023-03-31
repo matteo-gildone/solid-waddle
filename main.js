@@ -34,6 +34,11 @@ const reports = [
     backgroundColour: '--mention_badge'
   },
   {
+    title: 'Mention bedge, Active item',
+    foregroundColour: '--mention_badge',
+    backgroundColour: '--active_item'
+  },
+  {
     title: 'Active presence',
     foregroundColour: '--active_presence',
     backgroundColour: '--column_bg'
