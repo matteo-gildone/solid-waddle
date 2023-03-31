@@ -66,6 +66,10 @@ const theme = generateTheme();
 generateRepors(reports)(theme);
 setThemeMessage(theme);
 document.getElementById('copy-palette').addEventListener('click', copyToClipboard);
+document.addEventListener('contextmenu', event => {
+  event.preventDefault();
+  alert('Come on... seriusly??????');
+});
 
 
 

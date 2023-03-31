@@ -169,10 +169,12 @@ select {
 }
 
 .c-slack__users-item:hover {
+  cursor: pointer;
   background-color: var(--hover_item);
 }
 
-.c-slack__users-item--active {
+.c-slack__users-item--active,
+.c-slack__users-item--active:hover{
   background-color: var(--active_item);
   color: var(--active_item_text);
 }
