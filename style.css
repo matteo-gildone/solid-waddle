@@ -97,14 +97,42 @@ select {
   }
 }
 
+.c-no-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  font-size: 4rem;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .c-no-mobile {
+    display: none;
+  }
+}
+
 .c-slack {
-  display: grid;
-  grid-template-columns: 339px calc(100% - 339px);
-  grid-template-rows: 39px calc(100% - 39px);
-  grid-column-gap: 0;
-  grid-row-gap: 0;
-  width: 100vw;
-  height: 100vh;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .c-slack {
+    display: grid;
+    grid-template-columns: 339px calc(100% - 339px);
+    grid-template-rows: 39px calc(100% - 39px);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 .c-slack__header {
@@ -319,11 +347,11 @@ select {
   padding: 4px 10px;
   border-radius: 15px;
   border: 1px solid rgba(0,0,0,0.3);
-  font-size: .875rem;
+  font-size: .725rem;
   text-align: center;
 }
 
 .c-wcag-result__ratio div:last-child {
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 700;
 }
